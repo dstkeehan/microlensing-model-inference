@@ -3,7 +3,7 @@ The estimation of parameters for gravitational microlensing events typically pro
 
 This library implements an adaptive reversible-jump algorithm that efficiently refines a suite of surrogate posteriors to the true joint model posterior.
 
-This is a code repository for the the paper [Microlensing model inference with normalising flows and reversible jump MCMC](https://doi.org/10.1016/j.ascom.2022.100657).
+This is a code repository for the paper [Microlensing model inference with normalising flows and reversible jump MCMC](https://doi.org/10.1016/j.ascom.2022.100657).
 
 ## Exemplar Posterior
 To estimate the marginal model probabilities, the adaptive reversible-jump algorithm constructs a discrete analogue of the true posterior that is joint over all candidate models. For example:
@@ -66,7 +66,7 @@ Models = [single_Model, binary_Model]
 joint_model_chain, total_acc_history, inter_model_acc_history = \
                                sampling.ARJMH(Models, iterations, warm_up_iterations)
 ```
-*For a use case which accurately approximates the centers and covariances with surrogate posteriors derived from neural networks, see **example_inference.py**.
+*In the paper [Microlensing model inference with normalising flows and reversible jump MCMC](https://doi.org/10.1016/j.ascom.2022.100657) the centers and covariances are derived from surrogate posteriors generated from neural networks.
 
 ## Authors and Acknowledgements
 Reversible-jump algorithm and supporting code created by Dominic Keehan.
