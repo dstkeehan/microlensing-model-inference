@@ -27,10 +27,10 @@ import sampling
 # Generate a discrete synthetic single lens event (with added noise).
 parameters = [0.9, 15.0, 1.1, 32.0]
 theta = sampling.State(truth=parameters)
-n_obs = 720
-snr = 23
+n_observations = 720
+signal_to_noise_ratio = 23
 
-data = light_curve_simulation.synthetic_single(theta, n_obs, snr)
+data = light_curve_simulation.synthetic_single_lens(theta, n_observations, signal_to_noise_ratio)
 
 # Create a list of single lens parameter prior distributions.
 fs_pi = distributions.LogUniform(0.1, 1)
@@ -50,9 +50,9 @@ single_covariance = [[0.1, 0.0, 0.0, 0.0],
 single_centre = sampling.State(truth=[0.9, 15.0, 1.1, 32.0])
 
 # Initialise the single lens model.
-m = 0
-D = 4
-single_Model = sampling.Model(m, D, single_centre, single_priors, single_covariance, \
+model_index = 0
+dims = 4
+single_Model = sampling.Model(model_index, dims, single_centre, single_priors, single_covariance, \
                                   data, light_curve_simulation.single_log_likelihood)
 ```
 
