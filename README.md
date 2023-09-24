@@ -63,7 +63,7 @@ To sample from a joint single/binary lens model posterior:
 Models = [single_Model, binary_Model]
 
 # Sample from the joint posterior.
-joint_model_chain, total_acc_history, inter_model_acc_history = \
+joint_model_chain, MAP_parameter_estimates, _, _ = \
                                sampling.ARJMH(Models, iterations, warm_up_iterations)
 ```
 *In the paper [Microlensing model inference with normalising flows and reversible jump MCMC](https://doi.org/10.1016/j.ascom.2022.100657) the centers and covariances are derived from surrogate posteriors generated from neural networks.
